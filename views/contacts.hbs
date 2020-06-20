@@ -1,0 +1,36 @@
+<main>
+  <div class="container">
+    {{#if contacts}}
+  {{#each contacts}}
+    <form id="card" class="card">
+      <h2>Contact Details</h2>
+        <div class="card-control">
+        <label for="id">Id</label>
+        <p id="id">{{id}}</p>
+      </div>
+      <div class="card-control">
+        <label for="name">Name</label>
+        <p id="name">{{name}}</p>
+      </div>
+      <div class="card-control">
+        <label for="email">Email</label>
+        <p id="email">{{email}}</p>
+      </div>
+      <div class="card-control">
+        <label for="number">Number</label>
+        <p id="number">{{number}}</p>
+      </div>
+      <div class="card-control">
+        <label for="address">Address</label>
+        <p id="address">{{address}}</p>
+      </div>
+      <button formmethod="post" formaction="/contact?edit=true&id={{id}}" type="submit">Edit</button>
+      <button formmethod="post" formaction="/delete/{{id}}" type="submit">Delete</button>
+    </form>
+    {{/each}}
+    {{else}}
+    <h2>No contacts found...</h2>
+    {{/if}}
+  </div>
+</main>
+

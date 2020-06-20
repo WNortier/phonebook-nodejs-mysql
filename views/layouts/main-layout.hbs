@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  {{#if addCSS}}
+  <link rel="stylesheet" href="/css/add.css">
+  {{/if}}
+  {{#if contactCSS}}
+  <link rel="stylesheet" href="/css/contact.css">
+  {{/if}}
+  {{#if aboutCSS}}
+  <link rel="stylesheet" href="/css/about.css">
+  {{/if}}
+  <title>{{pageTitle}}</title>
+</head>
+
+<body>
+  <div id="navbar" class="navbar">
+    <h1 class="logo">
+      <span class="text-primary"> Phone</span>book
+    </h1>
+    <nav>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/contacts">Contacts</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+  {{{body}}}
+  <script src="/flash.js"></script>
+</body>
+
+</html>
+{{!-- <img src="/logo.png" alt="" class="logo"> --}}

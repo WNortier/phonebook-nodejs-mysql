@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'kamino';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+@font-face {
+  font-family: kamino;
+  src: url(/fonts/font2.woff);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333333;
+  color: white;
+  opacity: 0.8;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  padding: 0 30px;
+  z-index: 100;
+}
+
+.navbar h1 {
+  margin-left: 2rem;
+}
+
+.navbar a {
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  border-bottom: #a72828 2px solid;
+}
+
+.navbar ul {
+  display: flex;
+  margin: 0 3rem;
+  list-style: none;
+}
+
+.navbar .logo {
+  font-weight: 400;
+}

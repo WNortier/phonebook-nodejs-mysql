@@ -1,0 +1,69 @@
+<main>
+  <div class="container">
+
+    <div class="form-container" id="add">
+      <form id="form" class="form">
+        {{#if contact}}
+        <h2>Edit Contact</h2>
+        {{else}}
+        <h2>Add Contact</h2>
+        {{/if}}
+        <div class="form-control">
+          <label for="name">Name</label>
+          {{#if contact}}
+          <input type="text" id="name" name="name" placeholder="Enter name" value="{{contact.name}}">
+          {{else}}
+          <input type="text" id="name" name="name" placeholder="Enter name">
+          {{/if}}
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          {{#if contact}}
+          <input type="text" id="email" name="email" placeholder="Enter email" value="{{contact.email}}">
+          {{else}}
+          <input type="text" id="email" name="email" placeholder="Enter email">
+          {{/if}}
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="number">Number</label>
+          {{#if contact}}
+          <input type="number" id="number" name="number" placeholder="Enter number" value="{{contact.number}}">
+          {{else}}
+          <input type="number" id="number" name="number" placeholder="Enter number">
+          {{/if}}
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="address">Address</label>
+          {{#if contact}}
+          <input type="text" id="address" name="address" placeholder="Enter address" value="{{contact.address}}">
+          {{else}}
+          <input type="text" id="address" name="address" placeholder="Enter address">
+          {{/if}}
+          <small>Error Message</small>
+        </div>
+        <h5 class="flash">{{messages.info}}</h5>
+        {{#if contact}}
+        <button formmethod="POST" formaction="/edit-product/{{contact.id}}" type="submit">Submit</button>
+        {{else}}
+        <button formmethod="POST" formaction="/contact" type="submit">Submit</button>
+        {{/if}}
+      </form>
+    </div>
+
+    {{#if count}}
+    <div class="form-container delete">
+      <form method="POST" action="/delete-all" id="form" class="form">
+        <h2>Delete All Contacts</h2>
+        <div class="form-control count">
+          <label for="count">Count: <b>{{count}}</b></label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    {{/if}}
+
+  </div>
+</main>
