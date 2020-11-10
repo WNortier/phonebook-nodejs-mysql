@@ -8,7 +8,7 @@ const {
   deleteContact,
   updateContact,
 } = require('../models/contact');
-const Contact = require('../models/contact');
+// const Contact = require('../models/contact');
 
 router.get('/about', (req, res) => {
   res.status(200).render('about', {
@@ -48,7 +48,8 @@ router.post('/contact', (req, res) => {
     });
   } else {
     let contact = new Contact(
-      req.body.name,
+      req.body.first_name,
+      req.body.last_name,
       req.body.email,
       req.body.number,
       req.body.address

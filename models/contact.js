@@ -4,9 +4,10 @@ const shortid = require('shortid');
 var contactList = [];
 
 module.exports = class Contact {
-  constructor(name, email, number, address) {
+  constructor(firstname, lastname, email, number, address) {
     this.id = shortid.generate();
-    this.name = name;
+    this.first_name = firstname;
+    this.last_name = lastname;
     this.email = email;
     this.number = number;
     this.address = address;
@@ -30,18 +31,19 @@ module.exports = class Contact {
   static updateContact(id, data) {
     const contacts = [...contactList];
 
-    const index = contacts.findIndex((c) => {
-      return c.id == id;
+    const index = contacts.findIndex((contact) => {
+      return contact.id == id;
     });
 
     const contact = contacts[index];
-    contact.name = data.name;
+    contact.first_name = data.first_name;
+    contact.last_name = data.last_name;
     contact.email = data.email;
     contact.number = data.number;
     contact.address = data.address;
 
-    contacts[index] = contact
-    contactList = contacts
+    contacts[index] = contact;
+    contactList = contacts;
   }
 
   static getContacts() {

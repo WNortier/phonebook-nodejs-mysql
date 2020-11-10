@@ -9,11 +9,20 @@
         <h2>Add Contact</h2>
         {{/if}}
         <div class="form-control">
-          <label for="name">Name</label>
+          <label for="first-name">First Name</label>
           {{#if contact}}
-          <input type="text" id="name" name="name" placeholder="Enter name" value="{{contact.name}}">
+          <input type="text" id="first_name" name="first_name" placeholder="Enter first name" value="{{contact.first_name}}">
           {{else}}
-          <input type="text" id="name" name="name" placeholder="Enter name">
+          <input type="text" id="first_name" name="first_name" placeholder="Enter first name">
+          {{/if}}
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="last-name">Last Name</label>
+          {{#if contact}}
+          <input type="text" id="last_name" name="last_name" placeholder="Enter last name" value="{{contact.last_name}}">
+          {{else}}
+          <input type="text" id="last_name" name="last_name" placeholder="Enter last name">
           {{/if}}
           <small>Error Message</small>
         </div>
